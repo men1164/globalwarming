@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta charset="mitr">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Temperature EXPERIMENT</title>
+  </head>
+  <style>
+  @font-face {
+    font-family: mitr;
+    src: url("Mitr-ExtraLight.ttf") format("truetype");
+  }
+  body, html {
+      height: 100%; /*ความสูงของรูป crop*/
+      margin: 0; /*ขอบ*/
+      font: 15px/1.8;
+      font-family: mitr;
+      color: #777;
+  }.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
+      position: relative;
+      opacity: 0.75;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+
+  .bgimg-1 {
+      background-image: url("2temp.jpg");
+      min-height: 100%;
+    }
+
+  .bgimg-2 {
+      background-image: url("4temp.jpg");
+      min-height: 100%;
+    }
+
+  .bgimg-3 {
+      background-image: url("5temp.jpg");
+      min-height: 100%;
+    }
+
+  .bgimg-4 {
+      background-image: url("6temp.jpg");
+      min-height: 100%;
+    }
+
+  .bgimg-5 {
+      background-image: url("countdownwpp.jpg");
+      min-height: 100%;
+    }
+
+  h1 {
+      letter-spacing: 5px;
+      /*text-transform: uppercase;*/
+      font: 50px "Lato", sans-serif;
+      font-size: 45px;
+      color: #fff;
+      position: absolute;
+      left: 0;
+      top: 80%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .content1{
+      color: #777;
+      background-color: white;
+      text-align:center;
+      padding: 50px 80px;
+      text-align: justify;
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+
+    .instruction{
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .instruction span.border {
+      background-color: #555;
+      color: #fff;
+      padding: 30px;
+      font-size: 40px;
+      letter-spacing: 8px;
+    }
+
+    .result {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .result span.border {
+      background-color: #555;
+      color: #fff;
+      padding: 30px;
+      font-size: 40px;
+      letter-spacing: 8px;
+    }
+
+    .own {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .own span.border {
+      background-color: #555;
+      color: #fff;
+      padding: 30px;
+      font-size: 40px;
+      letter-spacing: 8px;
+    }
+
+    .content2{
+      color:#ddd;
+      background-color:#474747;
+      padding:30px 50px;
+      text-align: justify;
+      font-size: 19px;
+      letter-spacing: 2px;
+    }
+
+    #underline{
+      width: 20%;
+      height: 1px;
+      background-color: #fff;
+      margin: 50px 565px;
+    }
+
+    #navbar {
+      background-color: #333;
+      position: fixed;
+      top: -100px;
+      width: 100%;
+      display: block;
+      transition: top 0.5s;
+      opacity: 0.85;
+    }
+
+    #navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .button1, .button2, .button3, .button4, .button5, .button6 {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: #f4511e;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-family: mitr;
+      font-size: 20px;
+      padding: 20px;
+      width: 300px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 30px 150px;
+      }
+    .button1 span, .button2 span, .button3 span, .button4 span, .button5 span, .button6 span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    .button1 span:after, .button2 span:after, .button3 span:after, .button4 span:after, .button5 span:after, .button6 span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px; /*left*/
+      transition: 0.5s;
+    }
+    .button1:hover span,.button2:hover span, .button3:hover span, .button4:hover span, .button5:hover span, .button6:hover span {
+      padding-right: 25px; /*left*/
+    }
+    .button1:hover span:after, .button2:hover span:after, .button3:hover span:after, .button4:hover span:after, .button5:hover span:after, .button6:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    #btn{
+      text-align: center;
+    }
+
+    .thanks {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      color: #111;
+    }
+
+    .thanks span.border {
+      background-color: #555;
+      color: #fff;
+      opacity: 0.85;
+      padding: 30px;
+      font-size: 35px;
+      letter-spacing: 8px;
+    }
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 30px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+    }
+
+    .fa:hover {
+      opacity: 0.7;
+    }
+
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="bgimg-1">
+      <h1>Temperature EXPERIMENT</h1>
+    </div>
+
+    <div class="content1">
+      <h3>การทดลองวัดอุณหภูมิในโหลที่มีและไม่มีก๊าซคาร์บอนไดออกไซด์</h3>
+    <p>ปัจจุบัน มีสถิติออกมาแล้วว่า อุณหภูมิเฉลี่ยของทั้งโลกนั้นสูงขึ้นกว่าในอดีตและมีแนวโน้มจะสูงขึ้นเรื่อย ๆ
+        ซึ่งมีสาเหตุมาจากปริมาณก๊าซคาร์บอนไดออกไซด์ที่มากขึ้น และการทดลองนี้จะพิสูจน์ว่าก๊าซคาร์บอนไดออกไซด์
+        มีคุณสมบัติการเก็บความร้อนได้ดีกว่าก๊าซอื่น ๆ โดยจะใช้เซนเซอร์วัดอุณหภูมิ DHT22 ต่อเข้ากับ Arduino และจะแสดงผลออกมาทางจอ
+        LCD จากนั้นจะให้ผู้ใช้ทำการทดลองด้วยตนเอง โดยทำตามคำแนะนำด้านล่าง เพื่อให้เห็นผลกระทบจากการเพิ่มขึ้นของอุณหภูมิตามการทดลองจริง
+        โดยจะเป็น Animation ที่เข้าใจง่าย</p>
+        <img src="3temp.png" style="display:block;margin:auto;width:50%;"></img><br><br>
+    </div>
+
+    <div class="bgimg-2">
+      <div class="instruction">
+        <span class="border" style="opacity: 1;">INSTRUCTION</span>
+      </div>
+    </div>
+
+     <div class="content2">
+      <h3 style="text-align:center;">จุดประสงค์</h3>
+      <p style="text-align:center;">1. เพื่อพิสูจน์ว่าก๊าซคาร์บอนไดออกไซด์มีคุณสมบัติเก็บความร้อน<br>
+          2. เพื่อให้ผู้ใช้ได้ทดลองเล่นและเรียนรู้กับ Arduino<br>
+          3. เพื่อเพิ่มกิจกรรมมุมวิทยาศาสตร์ในห้อง Learning Center<br><br><br></p>
+          <div id="underline"></div>
+          <h3 style="text-align:center;">วิธีการทดลอง</h3>
+          <p style="text-align:justify; padding-left:300px;padding-right:300px;">1. ต่อวงจร Arduino ดูผังการต่อ<a href="howto.jpg" style="color:white;">ที่นี่</a><br>
+          2. เตรียมผง Baking Soda และกรด Acitric ใส่ลงในบีกเกอร์<br>
+          3. เปิดสวิทช์ Power Supply ที่ต่อเข้ากับ Arduino<br>
+          4. เปิดทิ้งไว้ 2 นาที จนกว่าคำว่า nan บนจอ LCD จะหายไป<br>
+          5. เมื่อคำว่า nan หายไป ให้เปิดสวิทช์หลอดไฟอินฟราเรด และใส่น้ำลงไปในสารที่เตรียมไว้ให้เกิดฟองฟู่<br>
+          6. นำบีกเกอร์เข้าไปในขวดที่มีขอบสีดำ จากนั้นรอ 5-10 นาที<br>
+          7. สังเกตการเปลี่ยนแปลงของอุณหภูมิ จากนั้นให้ใช้ช่วงที่ค่าความแตกต่างระหว่าง 2 ขวดที่มากที่สุด มาคลิกดู Animation ผลกระทบด้านล่าง</p>
+      </div>
+
+     <div class="bgimg-3">
+       <div class="result">
+         <span class="border" style="opacity: 1;">Our RESULT</span>
+       </div>
+     </div>
+
+     <div class="content1">
+       <h3>ผลการทดลองจากผู้จัดทำ</h3>
+     <p>ผลการทดลอง อ้างอิงจากที่ผู้จัดทำได้ทดลองนั้นได้ว่า อุณหภูมิในขวดที่มีก๊าซคาร์บอนไดออกไซด์สูงขึ้นเร็วกว่าขวดที่ไม่มีอย่างเห็นได้ชัด
+        โดยเมื่อเริ่มนาทีที่ 2 ยังมีความใกล้เคียงกันอยู่ แต่เมื่อเวลา 8-12 นาทีผ่านไป อุณหภูมิของขวดที่มีก๊าซจะเริ่มมีความแตกต่างกันมากถึง 6 องศาเซลเซียส
+        และเมื่อถึงจุด ๆ หนึ่ง ค่าของอุณหภูมิจะเริ่มนิ่งขึ้นเนื่องจากหลอดไฟอินฟราเรดไม่สามารถให้ความร้อนได้ไปมากกว่านี้แล้ว</p>
+     </div>
+     <img src="tempexp.png" style="display:block;margin:auto;width:50%;"></img><br><br>
+     <video style="display:block;margin:auto;width:60%;opacity:1;" loop autoplay>
+       <source src="graph.mp4" type="video/mp4">
+    </video><br><br>
+     <!--<img src="tempexp2.png" style="display:block;margin:auto;width:50%;"></img><br><br>-->
+
+     <div class="bgimg-4">
+       <div class="own">
+         <span class="border" style="opacity: 1;">Your RESULT ?</span>
+       </div>
+     </div>
+
+     <div class="content2">
+       <h3>แล้วผลการทดลองของคุณล่ะ ?</h3>
+     <p>อยากเชิญชวนทุกคนลองทำการทดลองตามคำแนะนำที่ให้ไว้ด้านบน เพื่อให้เห็นว่าก๊าซคาร์บอนไดออกไซด์มีคุณสมบัติกักเก็บความร้อนจริง
+        โดยเมื่อทำการทดลองเสร็จแล้ว ให้จำผลการทดลองไว้ว่า ทั้ง 2 ขวดมีอุณหภูมิที่แตกต่างกันมากที่สุดกี่องศาเซลเซียส แล้วมาดูผลกระทบที่จะเกิดขึ้นกับโลกใบนี้
+        ถ้าเกิดอุณหภูมิเฉลี่ยสูงขึ้นเท่านี้จริง ๆ ภัยพิบัติต่าง ๆ จะรุนแรงแค่ไหน ...?</p><br><br>
+        <div id="underline"></div>
+        <p style="text-align:center;">1 องศาเซลเซียส</p><br><br>
+        <div id="btn">
+          <a href="animation1.html"><button class="button1"><span>Watch NOW!</span></button></a>
+        </div>
+        <!--
+        <div id="underline"></div>
+        <p style="text-align:center;">2 องศาเซลเซียส</p><br><br>
+        <div id="btn">
+          <a href="temp.html"><button class="button2"><span>Watch NOW!</span></button></a>
+        </div>
+
+        <div id="underline"></div>
+        <p style="text-align:center;">3 องศาเซลเซียส</p><br><br>
+        <div id="btn">
+          <a href="temp.html"><button class="button3"><span>Watch NOW!</span></button></a>
+        </div>
+
+        <div id="underline"></div>
+        <p style="text-align:center;">4 องศาเซลเซียส</p><br><br>
+        <div id="btn">
+          <a href="temp.html"><button class="button4"><span>Watch NOW!</span></button></a>
+        </div>
+
+        <div id="underline"></div>
+        <p style="text-align:center;">5 องศาเซลเซียส</p><br><br>
+        <div id="btn">
+          <a href="temp.html"><button class="button5"><span>Watch NOW!</span></button></a>
+        </div>
+
+        <div id="underline"></div>
+        <p style="text-align:center;">6 องศาเซลเซียส</p><br><br>
+        <div id="btn">
+          <a href="temp.html"><button class="button6"><span>Watch NOW!</span></button></a>
+        </div>-->
+     </div>
+
+     <div class="bgimg-5">
+       <div class="thanks">
+         <span class="border">THANKS for visited us!</span><br><br>
+         <p style="color:white;font-size:20px;">กด CTRL + U เพื่อดู Source Code ที่พวกเราเขียน !</p>
+         <p style="color:white;font-size:16px;"><a href="https://www.facebook.com/suwan.men" class="fa fa-facebook"></a>
+         Thanasit Suwanposri</p>
+         <p style="color:white;font-size:16px;"><a href="https://www.facebook.com/earthgy.pimanus" class="fa fa-facebook"></a>
+         Pimanus Kutragoon</p>
+     </div>
+
+   </div>
+
+    <div id="navbar"> <!--always last-->
+     <a href="updated.html">Home</a>
+     <a href="temp.html">Temperature Exp.</a>
+   </div>
+  </body>
+  <script>
+// When the user scrolls down 17px from the top of the document, slide down the navbar
+    window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 17 || document.documentElement.scrollTop > 17) {
+          document.getElementById("navbar").style.top = "0";
+        } else  {
+          document.getElementById("navbar").style.top = "-100px";
+        }
+      }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0; // For Chrome, Safari and Opera
+        document.documentElement.scrollTop = 0; // For IE and Firefox
+    }
+
+  </script>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta charset="mitr">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>SciZone</title>
+  </head>
+  <style>
+  @font-face {
+    font-family: mitr;
+    src: url("Mitr-ExtraLight.ttf") format("truetype");
+  }
+  body, html {
+      height: 100%; /*ความสูงของรูป crop*/
+      margin: 0; /*ขอบ*/
+      font: 15px/1.8;
+      font-family: mitr;
+      color: #777;
+  }
+
+  .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
+      position: relative;
+      opacity: 0.75;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+  .bgimg-1 {
+      background-image: url("1update.jpg");
+      min-height: 100%;
+      opacity: 0.85;
+    }
+
+  .bgimg-2{
+    background-image: url("2update.jpg");
+    min-height: 70%;
+  }
+
+  .bgimg-3{
+    background-image: url("3update.jpg");
+    min-height: 70%;
+  }
+
+  .bgimg-4{
+    background-image: url("countdownwpp.jpg");
+    min-height: 100%;
+  }
+
+  .bgimg-5{
+    background-image: url("4update.jpg");
+    min-height: 70%;
+  }
+
+  .intro {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    width: 60%;
+    text-align: center;
+    color: #111;
+  }
+
+  .intro span.border {
+    background-color: #555;
+    color: #fff;
+    opacity: 0.7;
+    padding: 30px;
+    font-size: 35px;
+    letter-spacing: 8px;
+  }
+
+  h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color: #111;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .content1{
+    color: #777;
+    background-color:white;
+    text-align:center;
+    padding:50px 80px;
+    text-align: justify;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .howto{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .howto span.border {
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: 8px;
+  }
+
+  .content2{
+    color:#ddd;
+    background-color:#474747;
+    padding:30px 50px;
+    text-align: justify;
+    font-size: 19px;
+    letter-spacing: 2px;
+  }
+
+  .pin{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .pin span.border {
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: 8px;
+  }
+
+  #underline{
+    width: 20%;
+    height: 1px;
+    background-color: #fff;
+    margin: 50px 565px;
+  }
+
+  .content3{
+    color:#fff;
+    background-color:#3EACA8;
+    padding:30px 50px;
+    text-align: justify;
+    font-size: 19px;
+    letter-spacing: 2px;
+  }
+
+  .about{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .about span.border {
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: 8px;
+  }
+
+  .content4{
+    color: #777;
+    background-color:white;
+    text-align:center;
+    padding:50px 80px;
+    text-align: justify;
+    font-size: 19px;
+    letter-spacing: 2px;
+  }
+
+  .thanks {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #111;
+  }
+
+  .thanks span.border {
+    background-color: #555;
+    color: #fff;
+    opacity: 0.85;
+    padding: 30px;
+    font-size: 35px;
+    letter-spacing: 8px;
+  }
+
+  .button1 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #00bfff;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: mitr;
+    font-size: 20px;
+    padding: 20px;
+    width: 300px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 30px 150px;
+    }
+  .button2 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: mitr;
+    font-size: 20px;
+    padding: 20px;
+    width: 300px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 30px 150px;
+    opacity: 0.5;
+      }
+  .button1 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .button2 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .button1 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .button2 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px; /*left*/
+    transition: 0.5s;
+  }
+  .button1:hover span {
+    padding-right: 25px;
+  }
+  .button2:hover span {
+    padding-right: 25px; /*left*/
+  }
+  .button1:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .button2:hover span:after {
+    opacity: 1;
+    right: 0;  /*left*/
+  }
+  #btn{
+    text-align: center;
+  }
+  #navbar {
+    background-color: #333;
+    position: fixed;
+    top: -100px;
+    width: 100%;
+    display: block;
+    transition: top 0.5s;
+    opacity: 0.85;
+  }
+
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  #topBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  #topBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  </style>
+  <body>
+     <!--<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>-->
+    <div class="bgimg-1">
+      <div class="intro">
+        <span class="border">Welcome to SciZone</span>
+      </div>
+    </div>
+
+    <div class="content1">
+  <h3>GLOBAL WARMING</h3>
+  <p>ถ้าพูดถึงคำว่าโลกร้อน เชื่อว่าใครหลาย ๆ คนก็รู้จักคำนี้ เพราะก็ยังคงเป็นกระแสให้ผู้คนฉุกคิดถึงผลกระทบจากการกระทำของเราอยู่เรื่อย ๆ
+    แต่ปัจจุบันเราใส่ใจกับคำว่า “โลกร้อน” มากแค่ไหน บางคนรู้จักแต่ก็ไม่รู้ว่าเกิดจากอะไร เห็นเป็นเรื่องไกลตัว แต่แท้จริงแล้ว
+    ปัจจุบัน การกระทำของเราทุก ๆ อย่าง ก็สามารถทำให้เกิดภาวะโลกร้อนได้ ซึ่งถ้าเรายังไม่คิดที่จะแก้ไขอย่างจริงจัง โลกเราก็อาจจะพบกับวิกฤต
+    ที่เราอาจไม่ทันได้เตรียมตัวรับมือกับภัยธรรมชาติเหล่านั้น จนทำให้เกิดการสูญเสียครั้งใหญ่ก็เป็นได้</p>
+    </div>
+
+    <div class="bgimg-2">
+      <div class="howto">
+        <span class="border">โลกร้อนเกิดขึ้นได้อย่างไร ?</span>
+    </div>
+  </div>
+
+  <div style="position:relative;">
+  <div class="content2">
+    <p>โลกของเรานั้นได้รับแสงจากดวงอาทิตย์ในทุก ๆ วัน ซึ่งแสงก็คือคลื่นแม่เหล็กไฟฟ้าชนิดหนึ่ง ที่มีองค์ประกอบของรังสี UV
+        จัดอยู่ในช่วงรังสีคลื่นยาว เมื่อรังสีเดินทางมากระทบกับพื้นโลก โลกก็จะได้รับพลังงานและสะท้อนกลับออกไปในรูปของรังสี
+        Infrared จัดอยู่ในช่วงรังสีคลื่นสั้น หรือที่รู้จักกันอีกชื่อหนึ่งว่า "รังสีความร้อน" ซึ่งจะมีก๊าซกลุ่มหนึ่งบนชั้นบรรยากาศ
+        ที่ทำหน้าที่ในการกักเก็บรังสี Infrared บางส่วน และปล่อยออกนอกโลกไปบางส่วน เพื่อรักษาอุณหภูมิของโลกให้เอื้อต่อการดำรงชีวิต
+        ก๊าซกลุ่มนั้นเรียกว่า "ก๊าซเรือนกระจก" <br><br><br>
+        <div id="underline"></div>
+        ....แต่ในปัจจุบัน มนุษย์ได้คิดค้นและประดิษฐ์สิ่งของอำนวยความสะดวกต่าง ๆ ซึ่งกว่าจะมาเป็นสินค้าที่วางอยู่ตามห้างสรรพสินค้าได้นั้น
+        ต้องผ่านกระบวนการต่าง ๆ มากมายไม่ว่าจะเป็น การดึงทรัพยากรธรรมชาติมาเป็นวัตถุดิบ การสังเคราะห์ การผลิตจากโรงงานอุตสาหกรรม
+        การขนส่ง ซึ่งล้วนปล่อยก๊าซคาร์บอนไดออกไซด์ ที่เป็นหนึ่งในกลุ่มก๊าซเรือนกระจก ทำให้ก๊าซเรือนกระจกสะสมหนาตัวขึ้น และกักเก็บรังสี
+        Infrared มากขึ้น ส่งผลให้อุณหภูมิเฉลี่ยของโลกสูงขึ้นตามลำดับ เป็นสาเหตุให้เกิดภาวะโลกร้อน และภัยพิบัติทางธรรมชาติที่รุนแรงตามมานั่นเอง</p>
+  </div>
+</div>
+
+    <div class="bgimg-5">
+      <div class="about">
+        <span class="border">Our Project</span>
+     </div>
+    </div>
+
+    <div class="content4">
+    <h3>SciZone project</h3>
+    <p>โครงงานของเรา จะใช้อุปกรณ์อิเล็กทรอนิกส์ต่าง ๆ และคอมพิวเตอร์ เข้ามาช่วยเป็นสื่อในการเรียนรู้เกี่ยวกับผลกระทบของภาวะโลกร้อน
+        รวมไปถึงทำให้ข้อมูลด้านวิทยาศาสตร์ต่าง ๆ ที่เข้าใจยากให้เข้าใจง่ายขึ้นผ่านสื่อรูปแบบต่าง ๆ ที่เราออกแบบไว้ ก็คือ<br><br>
+        1. เรียนรู้ผ่านการทดลองการวัดอุณหภูมิในโหลที่มีและไม่มีก๊าซคาร์บอนไดออกไซด์ โดยจะใช้เซนเซอร์วัดอุณหภูมิ ซึ่งต้องอาศัย Arduino
+        เข้ามาช่วยในการวัดและแสดงผลออกมาทางจอ LCD ประกอบกับการทำหน้าเว็บที่เชื่อมโยงว่า ถ้าอุณหภูมิของโลกสูงขึ้นเท่านี้ จะเกิดผลกระทบมากหรือน้อย อย่างไรบ้าง
+        <br><br>
+        2. ใช้การเขียนโปรแกรมภาษา HTML และ CSS ซึ่งเป็นภาษาที่ใช้ในการสร้าง Website หรือก็คือการให้คอมพิวเตอร์มีระบบตอบโต้กับผู้ชม
+        และมี Interactive กับคนที่เข้ามาเล่นได้ ไม่ใช่แค่บอร์ดความรู้ทั่ว ๆ ไป รวมไปถึงจะมี Animation ที่เป็นภาพ Graphic ที่จะแสดงข้อมูลความรู้
+        Process ต่าง ๆ เช่น สิ่งที่ส่งผลต่อโลกร้อน หรือผลกระทบจากโลกร้อน ในรูปแบบของ VDO เพื่อให้ผู้ชมสามารถเห็นลำดับต่าง ๆ เป็นภาพได้ชัดเจน
+        เป็นขั้นตอน และน่าสนใจ</p>
+    </div>
+
+  <div class="bgimg-3">
+    <div class="pin">
+      <span class="border">Our EXPERIMENT</span>
+  </div>
+</div>
+
+  <div style="position:relative;">
+  <div class="content3">
+    <p>การทดลองของเรานั้นทำมาเพื่อพิสูจน์ปรากฏการณ์ต่าง ๆ ที่เกี่ยวข้องกับการเกิดภาวะโลกร้อน มีทั้งอุณหภูมิและก๊าซคาร์บอนไดออกไซด์
+        ซึ่งการทดลองของเรานั้นจะใช้บอร์ด Arduino โดยจะมีหัวเซนเซอร์เป็นตัววัด นั่นคือ <br><br></p>
+        <div id="underline"></div>
+        <p>การทดลองวัดอุณหภูมิในโหลที่มีและไม่มีก๊าซคาร์บอนไดออกไซด์ - เพื่อพิสูจน์ว่าก๊าซคาร์บอนไดออกไซด์มีผลต่อการเปลี่ยนแปลงของอุณหภูมิจริง<br></p>
+        <div id="btn">
+          <a href="temp.html"><button class="button1"><span>Do it NOW!</span></button></a>
+        </div>
+        <!--<br><br>
+        <div id="underline"></div>
+        <p>2. การทดลองวัดปริมาณก๊าซคาร์บอนไดออกไซด์จากการเผาในระบบปิด - เพื่อให้เห็นว่า เราปล่อยก๊าซคาร์บอนไดออกไซด์แม้กระทั่งการเผาเพียงเล็กน้อย</p>
+        <div id="btn">
+          <a href="co2.html"><button class="button2"><span>**Not Available**</span></button></a>
+        </div>-->
+
+  </div>
+</div>
+
+    <div class="bgimg-4">
+      <div class="thanks">
+        <span class="border">THANKS for visited us!</span><br><br>
+        <p style="color:white;font-size:20px;">กด CTRL + U เพื่อดู Source Code ที่พวกเราเขียน !</p>
+        <p style="color:white;font-size:16px;"><a href="https://www.facebook.com/suwan.men" class="fa fa-facebook"></a>
+        Thanasit Suwanposri</p>
+        <p style="color:white;font-size:16px;"><a href="https://www.facebook.com/earthgy.pimanus" class="fa fa-facebook"></a>
+        Pimanus Kutragoon</p>
+    </div>
+  </div>
+
+
+  <div id="navbar">
+   <a href="updated.html">Home</a>
+   <a href="temp.html">Temperature Exp.</a>
+ </div>
+  </body>
+  <script>
+// When the user scrolls down 17px from the top of the document, slide down the navbar
+    window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 17 || document.documentElement.scrollTop > 17) {
+          document.getElementById("navbar").style.top = "0";
+        } else  {
+          document.getElementById("navbar").style.top = "-100px";
+        }
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("topBtn").style.display = "block";
+        } else {
+            document.getElementById("topBtn").style.display = "none";
+        }
+      }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0; // For Chrome, Safari and Opera
+        document.documentElement.scrollTop = 0; // For IE and Firefox
+    }
+</script>
+</html>

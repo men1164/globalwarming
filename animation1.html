@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>1 องศาเซลเซียส</title>
+  </head>
+  <style>
+  @font-face {
+    font-family: mitr;
+    src: url("Mitr-ExtraLight.ttf") format("truetype");
+  }
+  body{
+    background-color: #474747;
+  }
+  .button1 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: mitr;
+    font-size: 20px;
+    padding: 20px;
+    width: 300px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 30px 150px;
+    }
+    .button2 {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: #00bfff;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-family: mitr;
+      font-size: 20px;
+      padding: 20px;
+      width: 300px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 30px 150px;
+      }
+  .button1 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .button2 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .button1 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .button2 span:after {
+    content: '\226A';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+  }
+  .button1:hover span {
+    padding-right: 25px;
+  }
+  .button2:hover span {
+    padding-left: 25px;
+  }
+  .button1:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .button2:hover span:after {
+    opacity: 1;
+    left: 0;
+  }
+  #btn{
+    text-align: center;
+  }
+  #title{
+    text-align: center;
+    font-size: 3em;
+    color: #271aba;
+  }
+  </style>
+  <body>
+    <div class="bgimg-1">
+    <video style="display:block;margin:auto;width:70%;opacity:1;" controls loop autoplay>
+      <source src="animation1.mp4" type="video/mp4">
+   </video>
+
+
+   <div id="title">
+   <div id="btn">
+     <a href="temp.html"><button class="button2"><span>กลับหน้าหลัก</span></button></a>
+     <!--<a href="knowingGW.html"><button class="button1"><span>2 องศาเซลเซียส</span></button></a>-->
+   </div>
+ </div>
+</div>
+  </body>
+</html>
